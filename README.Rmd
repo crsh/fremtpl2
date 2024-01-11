@@ -30,6 +30,7 @@ target_diagram <- tar_mermaid(
 ```{r}
 #| label: target-diagram
 #| results: asis
+#| echo: false
 
 cat("```mermaid\n")
 cat(target_diagram, sep = "\n")
