@@ -1,0 +1,37 @@
+---
+output: github_document
+---
+
+# Vorhersage von Schadenshäufigkeiten und -summen im French Motor TPL Insurance Claims-Datensatz
+
+Nach einer Datenexploration und inhaltlich begründeten Prädiktorauswahl (`results/exploration.html`) versuche ich mit Hilfe von Generalized Additive Models (GAM) die Schadenshäufigkeiten und -summen vorherzusagen.
+Hierfür nutze ein GAM mit Poisson-Verteilung für die Schadenshäufigkeiten und ein GAM mit Lognormal-Verteilung für die Schadenssummen.
+Die Modelle werden in R mit Bayesischen Methoden geschätzt (`brms`) und durch Leave-one-out Cross-Validation sowie einen Hold-out Cross-Validation verglichen (`loo`).
+Hierzu wird das Make-ähnlichen Pipeline tools `targets` genutzt.
+
+## Softwarevoraussetzungen
+
+Die benötigte Software wird in der Datei `DESCRIPTION` aufgelistet.
+
+## Übersicht über die Berechnungen
+
+```{r}
+#| include: false
+library("targets")
+
+target_diagram <- tar_mermaid(
+  label = c("time", "branches")
+  , script = "./results/_targets.r"
+  , store = "./results/_targets"
+  , reporter = "silent"
+)
+```
+
+```{r}
+#| label: target-diagram
+#| results: asis
+
+cat("```mermaid\n")
+cat(target_diagram, sep = "\n")
+cat("\n```")
+```

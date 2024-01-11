@@ -1,0 +1,30 @@
+Package: fremtpl2
+Title: Prediction models for freMTPL2 dataset
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Frederik", "Aust", role = c("aut", "cre"), email = "frederik.aust@uni-koeln.de")
+  )
+License: CC BY 4.0
+Encoding: UTF-8
+Language: en
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    targets,
+    tarchetypes,
+    crew,
+    arrow,
+    tinylabels,
+    dplyr,
+    knitr,
+    kableExtra,
+    ggplot2,
+    papaja,
+    brms,
+    cmdstanr,
+    loo,
+    modelr,
+    tidybayes

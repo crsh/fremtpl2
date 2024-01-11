@@ -1,0 +1,6 @@
+actuarial_challenge:
+  reporter_make     : "verbose" # "summary"
+  reporter_outdated : "forecast"
+  script            : "results/_targets.r"
+  store             : "results/_targets"
+  workers           : "4"
